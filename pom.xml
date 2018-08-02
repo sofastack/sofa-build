@@ -30,10 +30,10 @@
         <sofa.ark.version>0.4.0</sofa.ark.version>
         <sofa.jarslink.version>2.0.0</sofa.jarslink.version>
         <sofa.tracer.version>2.1.1</sofa.tracer.version>
-        <sofa.lookout.version>1.4.1</sofa.lookout.version>
-        <sofa.common.tools.version>1.0.12</sofa.common.tools.version>
+        <sofa.lookout.version>1.4.2</sofa.lookout.version>
+        <sofa.common.tools.version>1.0.14</sofa.common.tools.version>
         <sofa.bolt.version>1.4.2</sofa.bolt.version>
-        <sofa.hessian.version>3.3.0</sofa.hessian.version>
+        <sofa.hessian.version>3.3.2</sofa.hessian.version>
         <sofa.rpc.starter.version>5.4.3</sofa.rpc.starter.version>
 
         <!-- 3rd lib dependency -->
