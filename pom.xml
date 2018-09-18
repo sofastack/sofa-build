@@ -146,7 +146,7 @@
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>rpc-sofa-boot-plugin</artifactId>
-                <version>${rpc.starter.version}</version>
+                <version>${sofa.rpc.version}</version>
             </dependency>
 
             <dependency>
@@ -164,7 +164,7 @@
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>bolt</artifactId>
-                <version>${bolt.version}</version>
+                <version>${sofa.bolt.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
