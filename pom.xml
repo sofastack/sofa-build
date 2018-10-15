@@ -17,27 +17,35 @@
     <packaging>pom</packaging>
 
     <properties>
-        <!--compile-->
-        <java.version>1.8</java.version>
+        <!--project-->
+        <java.version>1.7</java.version>
         <project.encoding>UTF-8</project.encoding>
         <project.build.encoding>UTF-8</project.build.encoding>
 
-        <!--spring-->
+        <!--starter-->
         <spring.boot.version>2.0.3.RELEASE</spring.boot.version>
-
-        <!--sofa-->
         <sofa.boot.version>3.0.0-SNAPSHOT</sofa.boot.version>
-        <sofa.ark.version>0.4.0</sofa.ark.version>
+        <sofa.ark.version>0.5.2</sofa.ark.version>
+        <sofa.rpc.version>5.4.6</sofa.rpc.version>
+        <sofa.tracer.version>2.2.0</sofa.tracer.version>
+        <sofa.lookout.version>1.4.4</sofa.lookout.version>
         <sofa.jarslink.version>2.0.0</sofa.jarslink.version>
-        <sofa.tracer.version>2.1.1</sofa.tracer.version>
-        <sofa.lookout.version>1.4.1</sofa.lookout.version>
-        <sofa.common.tools.version>1.0.12</sofa.common.tools.version>
-        <sofa.bolt.version>1.4.2</sofa.bolt.version>
-        <sofa.hessian.version>3.3.0</sofa.hessian.version>
-        <sofa.rpc.starter.version>5.4.3</sofa.rpc.starter.version>
 
-        <!-- 3rd lib dependency -->
+        <!--2rd lib dependency-->
+        <sofa.common.tools.version>1.0.14</sofa.common.tools.version>
+        <sofa.bolt.version>1.4.2</sofa.bolt.version>
+        <sofa.hessian.version>3.3.3</sofa.hessian.version>
+
+        <!--3rd lib dependency-->
         <fastjson.version>1.2.47</fastjson.version>
+        <grpc-all.version>1.0.3</grpc-all.version>
+        <javassist.version>3.19.0-GA</javassist.version>
+        <protobuf-java.version>2.6.1</protobuf-java.version>
+        <guice.version>3.0</guice.version>
+        <guava.version>18.0</guava.version>
+        <netty-all.version>4.1.6.Final</netty-all.version>
+        <zipkin.version>2.11.3</zipkin.version>
+        <zipkin.reporter.version>2.7.7</zipkin.reporter.version>
 
         <!--maven plugin-->
         <maven.staging.plugin>1.6.7</maven.staging.plugin>
@@ -82,7 +90,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!--sofaboot-->
+            <!-- starter management begin -->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>infra-sofa-boot-starter</artifactId>
@@ -108,51 +116,48 @@
                 <artifactId>isle-sofa-boot-starter</artifactId>
                 <version>${sofa.boot.version}</version>
             </dependency>
-
-            <!--sofaboot starters-->
-            <!--sofa rpc-->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>rpc-sofa-boot-starter</artifactId>
-                <version>${sofa.rpc.starter.version}</version>
+                <version>${sofa.rpc.version}</version>
             </dependency>
-
-            <!--sofa tracer-->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>tracer-sofa-boot-starter</artifactId>
                 <version>${sofa.tracer.version}</version>
             </dependency>
-            <!--sofa lookout-->
             <dependency>
                 <groupId>com.alipay.sofa.lookout</groupId>
                 <artifactId>lookout-sofa-boot-starter</artifactId>
                 <version>${sofa.lookout.version}</version>
             </dependency>
-
-            <!--sofa ark-->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>sofa-ark-springboot-starter</artifactId>
                 <version>${sofa.ark.version}</version>
             </dependency>
+            <!-- starter management end -->
 
-            <!--ark plugin-->
+            <!-- Ark Plugin Management begin -->
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
-                <artifactId>runtime-sofa-boot-starter</artifactId>
-                <classifier>ark-plugin</classifier>
+                <artifactId>runtime-sofa-boot-plugin</artifactId>
                 <version>${sofa.boot.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
-                <artifactId>rpc-sofa-boot-starter</artifactId>
-                <classifier>ark-plugin</classifier>
-                <version>${sofa.rpc.starter.version}</version>
+                <artifactId>rpc-sofa-boot-plugin</artifactId>
+                <version>${sofa.rpc.version}</version>
             </dependency>
 
-            <!--2nd lib dependency-->
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>tracer-sofa-boot-plugin</artifactId>
+                <version>${sofa.tracer.version}</version>
+            </dependency>
+
+            <!-- 2nd dependency begin -->
             <dependency>
                 <groupId>com.alipay.sofa.common</groupId>
                 <artifactId>sofa-common-tools</artifactId>
@@ -173,13 +178,125 @@
                 <artifactId>sofa-ark-spi</artifactId>
                 <version>${sofa.ark.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>tracer-core</artifactId>
+                <version>${sofa.tracer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>tracer-extensions</artifactId>
+                <version>${sofa.tracer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-tracer-springmvc-plugin</artifactId>
+                <version>${sofa.tracer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-tracer-httpclient-plugin</artifactId>
+                <version>${sofa.tracer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-api</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-client</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-common</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-core</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-ext-jvm</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-ext-os</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-dropwizard</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-prometheus</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-server</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+            <!-- 2nd dependency end -->
 
-            <!-- 3rd lib dependency -->
+            <!-- 3rd lib dependency begin -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-all</artifactId>
+                <version>${grpc-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.zipkin2</groupId>
+                <artifactId>zipkin</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.reporter2</groupId>
+                <artifactId>zipkin-reporter</artifactId>
+                <version>${zipkin.reporter.version}</version>
+            </dependency>
+            <!-- 3rd lib dependency end -->
 
         </dependencies>
     </dependencyManagement>
