@@ -43,7 +43,6 @@
         <protobuf-java.version>2.6.1</protobuf-java.version>
         <guice.version>3.0</guice.version>
         <guava.version>18.0</guava.version>
-        <netty-all.version>4.1.6.Final</netty-all.version>
         <zipkin.version>2.11.3</zipkin.version>
         <zipkin.reporter.version>2.7.7</zipkin.reporter.version>
 
@@ -275,11 +274,6 @@
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>${javassist.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty-all.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.grpc</groupId>
