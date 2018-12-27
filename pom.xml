@@ -32,7 +32,7 @@
         <sofa.jarslink.version>2.0.0</sofa.jarslink.version>
 
         <!--2rd lib dependency-->
-        <sofa.common.tools.version>1.0.14</sofa.common.tools.version>
+        <sofa.common.tools.version>1.0.15</sofa.common.tools.version>
         <sofa.bolt.version>1.4.6</sofa.bolt.version>
         <sofa.hessian.version>3.3.3</sofa.hessian.version>
 
@@ -162,6 +162,13 @@
                 <artifactId>sofa-common-tools</artifactId>
                 <version>${sofa.common.tools.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.common</groupId>
+                <artifactId>log-sofa-boot-starter</artifactId>
+                <version>${sofa.common.tools.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>bolt</artifactId>
