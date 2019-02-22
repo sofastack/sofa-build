@@ -13,7 +13,7 @@
 
     <groupId>com.alipay.sofa</groupId>
     <artifactId>sofaboot-dependencies</artifactId>
-    <version>3.1.2-SNAPSHOT</version>
+    <version>3.1.2</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <!--starter-->
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-        <sofa.boot.version>3.1.2-SNAPSHOT</sofa.boot.version>
+        <sofa.boot.version>3.1.2</sofa.boot.version>
         <sofa.ark.version>0.5.2</sofa.ark.version>
         <sofa.rpc.starter.version>6.0.0</sofa.rpc.starter.version>
         <sofa.tracer.version>3.0.2</sofa.tracer.version>
@@ -32,9 +32,9 @@
         <sofa.jarslink.version>2.0.0</sofa.jarslink.version>
 
         <!--2rd lib dependency-->
-        <sofa.common.tools.version>1.0.16</sofa.common.tools.version>
+        <sofa.common.tools.version>1.0.18</sofa.common.tools.version>
         <sofa.bolt.version>1.4.6</sofa.bolt.version>
-        <sofa.hessian.version>3.3.4</sofa.hessian.version>
+        <sofa.hessian.version>3.3.6</sofa.hessian.version>
 
         <!--3rd lib dependency-->
         <fastjson.version>1.2.47</fastjson.version>
