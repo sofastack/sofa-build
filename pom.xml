@@ -13,7 +13,7 @@
 
     <groupId>com.alipay.sofa</groupId>
     <artifactId>sofaboot-dependencies</artifactId>
-    <version>3.1.5</version>
+    <version>3.1.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <!--starter-->
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-        <sofa.boot.version>3.1.5</sofa.boot.version>
+        <sofa.boot.version>3.1.6-SNAPSHOT</sofa.boot.version>
         <sofa.ark.version>0.6.0</sofa.ark.version>
 
         <sofa.rpc.starter.version>6.0.3</sofa.rpc.starter.version>
